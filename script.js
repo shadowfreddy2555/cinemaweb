@@ -10,12 +10,32 @@ document.addEventListener('keydown', function(event) {
 });
 
 function removeAllContent() {
-    document.body.innerHTML = ''; // Clear all content in the body
+    document.body.innerHTML = '';
 }
 
 function addYouSuckText() {
     var youSuckText = document.createElement('p');
     youSuckText.textContent = 'You suck, you said L';
-    youSuckText.style.fontSize = '72px'; // Set the font size to 24 pixels (you can adjust as needed)
+    youSuckText.style.fontSize = '24px';
     document.body.appendChild(youSuckText);
+}
+
+document.addEventListener('scroll', function() {
+    var scrolled = window.scrollY;
+
+    if (scrolled > 200) { // Adjust the scroll value as needed
+        addCreatedByText();
+    }
+});
+
+function addCreatedByText() {
+    var createdByText = document.createElement('p');
+    createdByText.textContent = 'Created by Shadowfreddy';
+    createdByText.style.fontSize = '72px';
+    createdByText.style.position = 'fixed';
+    createdByText.style.top = '50%';
+    createdByText.style.left = '50%';
+    createdByText.style.transform = 'translate(-50%, -50%)';
+    createdByText.style.color = '#ffffff';
+    document.body.appendChild(createdByText);
 }
