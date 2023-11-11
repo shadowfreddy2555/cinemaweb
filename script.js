@@ -13,7 +13,7 @@ function removeAllContent() {
     document.body.innerHTML = '';
 }
 
-document.addEventListener('scroll', function() {
+window.addEventListener('scroll', function() {
     var scrolled = window.scrollY;
 
     if (scrolled > 200) {
